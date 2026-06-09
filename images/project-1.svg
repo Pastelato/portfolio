@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Project preview placeholder">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f1147"/>
+      <stop offset="100%" stop-color="#7b61ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g1)"/>
+  <rect x="80" y="110" width="640" height="60" rx="14" fill="#ffffff" opacity="0.18"/>
+  <rect x="80" y="200" width="380" height="300" rx="18" fill="#ffffff" opacity="0.12"/>
+  <rect x="490" y="200" width="230" height="140" rx="18" fill="#c9f24c" opacity="0.85"/>
+  <rect x="490" y="360" width="230" height="140" rx="18" fill="#ffffff" opacity="0.12"/>
+  <text x="400" y="560" font-family="sans-serif" font-size="24" font-weight="600" fill="#ffffff" text-anchor="middle" opacity="0.7">Fintech Dashboard</text>
+</svg>
