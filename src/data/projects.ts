@@ -50,4 +50,28 @@ export const projects: Project[] = [
     link: "#",
     featured: true,
   },
+  {
+    id: "dreamcatcher",
+    title: "DreamCatcher",
+    category: "AI Platform",
+    description:
+      "DreamCatcher is an AI-powered platform for logging, analyzing, and connecting dreams into a personal knowledge universe. It turns a dream journal into an interactive timeline, uses AI to detect recurring patterns and relationships between people, places, emotions, and symbols, and builds a connected 'Dream Universe' through a knowledge graph and semantic search.",
+    image: "/images/dreamcatcher.png",
+    tags: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Spring Boot",
+      "Java",
+      "Spring AI",
+      "Neo4j",
+      "pgvector",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Ollama",
+    ],
+    link: "#",
+    featured: true,
+  },
 ];
