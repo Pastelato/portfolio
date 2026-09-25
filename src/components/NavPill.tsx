@@ -7,10 +7,10 @@ import type { NavLink } from "@/types/portfolio";
 import { revealViewport } from "@/lib/animations";
 
 const tabs: NavLink[] = [
-  { label: "Home", href: "#top" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#work" },
-  { label: "Contacts", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Projects", href: "/#work" },
+  { label: "Contacts", href: "/#contact" },
 ];
 
 /**

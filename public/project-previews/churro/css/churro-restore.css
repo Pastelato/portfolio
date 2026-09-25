@@ -1,0 +1,159 @@
+/*
+ * Restoration layer added while adapting Holy Churro for the portfolio.
+ * Fixes layout bugs that predate this adaptation (uneven product cards,
+ * a slide-style "Nuestra Historia" block) without touching the original
+ * template stylesheets. Loaded last so it can override them cleanly.
+ */
+
+/* The Instagram grid's Bootstrap .row carries the usual -15px gutter
+   margins without a .container to absorb them, bleeding past the
+   viewport on narrow screens. Guard at the root instead of touching
+   the original grid markup. */
+html, body {
+  overflow-x: hidden;
+}
+
+/* --- Featured / "Productos Mas Vendidos" carousel: consistent card layout --- */
+.owl-carousel .owl-item .item {
+  height: 100%;
+}
+.owl-carousel .owl-item .card {
+  display: flex;
+  flex-direction: column;
+  height: 440px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.owl-carousel .owl-item .card-img-top {
+  width: 100% !important;
+  height: 220px;
+  object-fit: contain;
+  padding: 1.5rem 1.5rem 0;
+  box-sizing: border-box;
+}
+.owl-carousel .owl-item .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 1.25rem 1.5rem;
+  text-align: center;
+}
+.owl-carousel .owl-item .card-body h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+.owl-carousel .owl-item .card-body h5 {
+  margin: 0 0 0.5rem;
+}
+.owl-carousel .owl-item .card-body p {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: #777;
+}
+.owl-carousel .owl-item .card-body .btn {
+  align-self: center;
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .owl-carousel .owl-item .card {
+    height: 400px;
+  }
+  .owl-carousel .owl-item .card-img-top {
+    height: 170px;
+  }
+
+  /* The carousel has no mobile breakpoint configured upstream, so it
+     keeps trying to fit 3 items into a phone width. Rather than fight
+     Owl Carousel's own transform/index math, drop its paging on small
+     screens and let the stage scroll natively as a swipeable row. */
+  .owl-carousel .owl-stage-outer {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .owl-carousel .owl-stage {
+    transform: none !important;
+    display: flex;
+    width: max-content !important;
+  }
+  .owl-carousel .owl-item {
+    width: 85vw !important;
+    flex: 0 0 auto;
+    margin-right: 12px !important;
+  }
+  .owl-carousel .owl-nav,
+  .owl-carousel .owl-dots {
+    display: none;
+  }
+}
+
+/* --- Instagram grid: fixed, square tiles so restored local photos line up --- */
+.instagram-grid__item > a {
+  aspect-ratio: 1 / 1;
+  cursor: default;
+}
+
+/* --- "Nuestra Historia": editorial story layout replacing the slide-style card --- */
+#historia .contenedorro.historia-restored {
+  position: static;
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+  transform: none;
+}
+
+.historia-restored__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  color: #fff;
+}
+
+.historia-restored__media img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.historia-restored__year {
+  display: inline-block;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  background: #f298a7;
+  color: #000;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.historia-restored__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 1rem;
+  color: #fff;
+}
+
+.historia-restored__lede {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #5ecbdd;
+  margin: 0 0 1rem;
+}
+
+.historia-restored__copy p:not(.historia-restored__lede) {
+  color: #e6e6e6;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .historia-restored__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}

@@ -5,11 +5,11 @@ import { fadeUp, revealViewport } from "@/lib/animations";
 import type { NavLink } from "@/types/portfolio";
 
 const links: NavLink[] = [
-  { label: "Home", href: "#top" },
-  { label: "Services", href: "#offering" },
-  { label: "Experience", href: "#experience" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#top" },
+  { label: "Services", href: "/#offering" },
+  { label: "Experience", href: "/#experience" },
+  { label: "Work", href: "/#work" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Footer() {

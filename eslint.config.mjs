@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Static assets only — includes vendored third-party JS bundled with
+    // embedded project previews (e.g. public/project-previews/**), not
+    // project source.
+    "public/**",
   ]),
 ]);
 

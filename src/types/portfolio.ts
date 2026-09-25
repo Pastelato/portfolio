@@ -32,6 +32,50 @@ export interface Project {
   featured?: boolean;
 }
 
+/** Lifecycle state of an archived project. */
+export type ProjectStatus = "Completed" | "Archived";
+
+/** One technology called out in a project's case-study "Technologies" section. */
+export interface TechDetail {
+  name: string;
+  description: string;
+}
+
+/**
+ * An older project shown on the dedicated `/projects` archive page. Unlike
+ * `Project`, it has no case-study image — the thumbnail is a generated
+ * gradient (from the `@theme` duo tokens) with an icon overlay instead.
+ *
+ * `year` is optional: some archived projects (especially early ones) have no
+ * reliably determinable date, and we don't invent one.
+ *
+ * The detail-page fields (`summary`, `techStack`, `previewUrl`, `sourceUrl`)
+ * are optional — only present for projects that have a full case-study page
+ * at `/projects/<id>`. A project without `summary` renders as a card only,
+ * matching the dummy placeholders used to design this section.
+ */
+export interface ArchivedProject {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+  year?: number;
+  status: ProjectStatus;
+  icon: LucideIcon;
+  /** Pair of `@theme` color variable names (e.g. "--color-duo-1") used to build the thumbnail gradient. */
+  gradient: [string, string];
+  /** Optional real image (logo, brand photo, etc.) shown over the gradient instead of `icon`. */
+  thumbnailImage?: string;
+  /** Longer "About the project" copy for the case-study page. */
+  summary?: string;
+  /** Fuller technology breakdown for the case-study page (vs. the compact `tags`). */
+  techStack?: TechDetail[];
+  /** Path to a live/static preview embeddable in an iframe, e.g. "/project-previews/michis/index.html". */
+  previewUrl?: string;
+  /** Link to the project's public source repository, if any. */
+  sourceUrl?: string;
+}
+
 /** A single headline metric. */
 export interface Stat {
   id: string;

@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 import {
   fadeUp,
@@ -105,6 +106,22 @@ export default function CaseStudy() {
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+      </motion.div>
+
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={revealViewport}
+        className="mt-10 flex justify-center"
+      >
+        <Link
+          href="/projects"
+          className="group inline-flex items-center gap-2 rounded-pill bg-accent px-6 py-3 text-sm font-semibold text-ink transition-all duration-300 hover:brightness-95"
+        >
+          View older projects
+          <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+        </Link>
       </motion.div>
     </section>
   );

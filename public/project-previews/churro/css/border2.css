@@ -1,0 +1,42 @@
+element.style {
+    background-image: url(img/hero_1.jpg);
+    background-position: 100% 0.93125px;
+}
+
+.section-3 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.site-section {
+    padding: 5rem 0;
+}
+
+.section-3:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    background-color: rgba(0,0,0,.5);
+}
+
+.section-3>.container {
+    z-index: 2;
+}
+
+.sec{
+    
+    background-repeat: no-repeat;
+    /*transition: background 10s, border 10s, border-radius 3s, box-shadow 3s;*/
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    display: block;
+   /* background-color: #f7b035;*/
+    
+}
+    

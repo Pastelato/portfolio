@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   AnimatePresence,
   motion,
@@ -25,11 +26,11 @@ interface MenuItem {
 }
 
 const items: MenuItem[] = [
-  { label: "My Projects", subtitle: "see all my projects", href: "#work", arrow: true },
-  { label: "About Me", subtitle: "learn about myself", href: "#offering" },
+  { label: "My Projects", subtitle: "see all my projects", href: "/#work", arrow: true },
+  { label: "About Me", subtitle: "learn about myself", href: "/#offering" },
   {
     label: "Contact Me",
-    href: "#contact",
+    href: "/#contact",
     socials: [
       {
         type: "linkedin",
@@ -88,12 +89,12 @@ export default function Navbar() {
               : "border-transparent bg-transparent"
           }`}
         >
-          <a
-            href="#top"
+          <Link
+            href="/#top"
             className="font-display text-xl font-bold tracking-tight text-ink"
           >
 SergioM<span className="text-accent-alt">.</span>
-          </a>
+          </Link>
 
           {/* Desktop menu — title + hairline + subtitle, top-right */}
           <ul className="hidden items-stretch divide-x divide-line md:flex">

@@ -1,0 +1,73 @@
+
+
+.elementor-18 .elementor-element.elementor-element-6f41831 > .wgl-elementor-shape-bottom {
+    transform: rotate(180deg);
+    z-index: 0;
+}
+
+.elementor *, .elementor :after, .elementor :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.elementor {
+    -webkit-hyphens: manual;
+    -ms-hyphens: manual;
+    hyphens: manual;
+}
+
+::selection {
+    color: #ffffff;
+}
+
+
+
+.elementor-18 .elementor-element.elementor-element-6f41831 > .wgl-elementor-shape-bottom svg {
+    height: 35px;
+}
+
+
+
+.elementor *, .elementor :after, .elementor :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.x {
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.elementor-18 .elementor-element.elementor-element-6f41831:not(.elementor-motion-effects-element-type-background), .elementor-18 .elementor-element.elementor-element-6f41831 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+    background-image: url(http://foodmood.wgl-demo.net/wp-content/uploads/2019/09/section-bg-6.jpg);
+    background-repeat: no-repeat;
+}
+
+.elementor-18 .elementor-element.elementor-element-6f41831 {
+    transition: background 10s, border 10s, border-radius 3s, box-shadow 3s;
+    z-index: 2;
+}
+
+.elementor-section {
+    position: relative;
+}
+
+.elementor *, .elementor :after, .elementor :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
