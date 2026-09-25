@@ -1,63 +1,14 @@
-import { BarChart3, Bike, Boxes, CakeSlice, CreditCard, Donut, Headset } from "lucide-react";
+import { Bike, CakeSlice, Donut } from "lucide-react";
 import type { ArchivedProject } from "@/types/portfolio";
 
-/**
- * Dummy entries for the `/projects` archive page — placeholders so the
- * page's layout, filters and cards can be evaluated before real older
- * projects are added here.
- */
 export const archivedProjects: ArchivedProject[] = [
-  {
-    id: "customer-support-platform",
-    title: "Customer Support Platform",
-    description:
-      "A customer support platform designed to centralize tickets, customer conversations and internal workflows.",
-    tags: ["Java", "Spring Boot", "PostgreSQL", "Redis"],
-    year: 2024,
-    status: "Completed",
-    icon: Headset,
-    gradient: ["--color-duo-1", "--color-surface-dark"],
-  },
-  {
-    id: "inventory-management-system",
-    title: "Inventory Management System",
-    description:
-      "A backend system for managing inventory, products, warehouses and stock movements.",
-    tags: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
-    year: 2023,
-    status: "Completed",
-    icon: Boxes,
-    gradient: ["--color-duo-2", "--color-surface-dark"],
-  },
-  {
-    id: "payment-integration-service",
-    title: "Payment Integration Service",
-    description:
-      "A service responsible for integrating multiple payment providers and processing transaction events.",
-    tags: ["Java", "REST APIs", "Kafka", "PostgreSQL"],
-    year: 2023,
-    status: "Archived",
-    icon: CreditCard,
-    gradient: ["--color-surface-dark", "--color-duo-3"],
-  },
-  {
-    id: "analytics-dashboard",
-    title: "Analytics Dashboard",
-    description:
-      "A dashboard for visualizing business metrics, reports and historical data.",
-    tags: ["React", "TypeScript", "Spring Boot", "PostgreSQL"],
-    year: 2022,
-    status: "Archived",
-    icon: BarChart3,
-    gradient: ["--color-duo-1", "--color-duo-2"],
-  },
   {
     id: "michis",
     title: "Michi's",
     description:
       "A one-page site for a home-based healthy snacks and desserts business in Caracas, built to introduce the brand, showcase products and take orders through a contact form.",
     tags: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
-    year: 2018,
+    year: 2019,
     status: "Archived",
     icon: CakeSlice,
     gradient: ["--color-duo-1", "--color-surface-dark"],
@@ -84,7 +35,7 @@ export const archivedProjects: ArchivedProject[] = [
     description:
       "A one-page team site for Redes America Mc, built to introduce a small web/app/design outfit under a bicycle-themed brand and take on new client work through a contact form.",
     tags: ["PHP", "Laravel", "Bootstrap", "jQuery"],
-    year: 2018,
+    year: 2019,
     status: "Archived",
     icon: Bike,
     gradient: ["--color-surface-dark", "--color-duo-1"],
@@ -110,7 +61,7 @@ export const archivedProjects: ArchivedProject[] = [
     description:
       "A one-page site for a churrería in Buenos Aires, built to showcase its menu and story, with a Firestore-backed product catalog and a floating delivery-app menu.",
     tags: ["React", "Redux", "Firebase", "Bootstrap", "jQuery"],
-    year: 2019,
+    year: 2020,
     status: "Archived",
     icon: Donut,
     gradient: ["--color-duo-2", "--color-duo-3"],

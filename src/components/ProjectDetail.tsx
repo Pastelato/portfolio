@@ -178,6 +178,7 @@ export default function ProjectDetail({ projectId }: { projectId: string }) {
               src={project.previewUrl}
               title={`${project.title} — live preview`}
               loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               className="h-[600px] w-full sm:h-[700px]"
             />
           </div>
