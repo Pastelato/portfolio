@@ -1,4 +1,4 @@
-import { Bike, CakeSlice, Donut } from "lucide-react";
+import { Bike, CakeSlice, Donut, Hammer } from "lucide-react";
 import type { ArchivedProject } from "@/types/portfolio";
 
 export const archivedProjects: ArchivedProject[] = [
@@ -76,5 +76,41 @@ export const archivedProjects: ArchivedProject[] = [
       { name: "React Router", description: "Included in the app shell, though the site itself is a single page." },
     ],
     previewUrl: "/project-previews/churro/index.html",
+  },
+  {
+    id: "morees",
+    title: "Ferretería Morees",
+    description:
+      "A hardware and tools e-commerce catalog for a retailer, built on Joomla and VirtueMart — the oldest project in this archive.",
+    tags: ["Joomla", "VirtueMart", "MySQL", "jQuery", "YOOtheme"],
+    year: 2012,
+    status: "Archived",
+    icon: Hammer,
+    gradient: ["--color-duo-1", "--color-duo-2"],
+    thumbnailImage: "/projects/morees/thumbnail.png",
+    summary:
+      "Ferretería Morees was an online catalog for a hardware and tools retailer, built on Joomla! 1.6 with the VirtueMart 2.0 e-commerce component and a commercial YOOtheme template (yoo_quantum, on the Warp framework). Rather than custom-built software, it's a real store configured on top of an existing open-source CMS/e-commerce platform: setting up the template's color profile, structuring VirtueMart's product categories, and loading a live catalog of tools — drills, hammers, shovels, chainsaws, ladders and saws — with real product photography. The original site's database isn't part of this archive, so this case study is documented from the surviving codebase, template configuration and product images rather than from a live install. It's presented here as an archived case study; the original Joomla/VirtueMart installation is not publicly runnable today, both because its dependencies (Joomla 1.6, VirtueMart 2.0.2, jQuery 1.6.1) have long been unsupported and carry known vulnerabilities, and because there's no live demo for it in this portfolio.",
+    techStack: [
+      { name: "Joomla! 1.6.3", description: "Core CMS handling content, routing, menus and the admin backend." },
+      { name: "VirtueMart 2.0.2", description: "E-commerce component powering the product catalog, categories and shopping cart." },
+      { name: "YOOtheme yoo_quantum (Warp framework)", description: "Commercial Joomla template providing the layout, the site's light-blue color profile, and responsive behavior." },
+      { name: "MySQL", description: "Relational database backing Joomla's content and VirtueMart's catalog." },
+      { name: "jQuery 1.6.1", description: "Bundled by the Warp framework to power the template's interactive UI." },
+      { name: "MooTools", description: "Joomla's own core JavaScript framework, running alongside jQuery." },
+    ],
+    features: [
+      "Product catalog with categories",
+      "Shopping cart",
+      "Product search",
+      "User registration and login",
+      "Contact form",
+      "Product image galleries",
+      "Image slider / lightbox (Widgetkit)",
+    ],
+    architecture: ["Browser", "Joomla! 1.6", "YOOtheme / Warp template", "VirtueMart 2.0.2", "MySQL"],
+    role:
+      "This one predates the rest of the archive: the work here was configuring and launching a real store on top of an existing open-source platform — setting up the Joomla/VirtueMart install, the YOOtheme template and the product catalog — rather than writing application code from scratch. No custom PHP application logic exists in the project; everything beyond content and configuration is stock Joomla, VirtueMart and YOOtheme software.",
+    historicalContext:
+      "Built around 2012, when Joomla + VirtueMart was a common way to stand up a small online store without a custom backend. Joomla, VirtueMart, jQuery and MooTools were the standard stack for that kind of project at the time — kept here to show how the toolset has evolved since, not as a stack anyone would choose today.",
   },
 ];

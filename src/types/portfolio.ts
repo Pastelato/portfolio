@@ -74,6 +74,14 @@ export interface ArchivedProject {
   previewUrl?: string;
   /** Link to the project's public source repository, if any. */
   sourceUrl?: string;
+  /** Confirmed functionality shown in a "Features" list on the case-study page. */
+  features?: string[];
+  /** Ordered steps (e.g. ["Browser", "Server", "Database"]) rendered as a simple flow diagram. */
+  architecture?: string[];
+  /** Factual, non-exaggerated note on what Sergio's involvement actually was. */
+  role?: string;
+  /** Short note situating the project in its original time period / stack era. */
+  historicalContext?: string;
 }
 
 /** A single headline metric. */

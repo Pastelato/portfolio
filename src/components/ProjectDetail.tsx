@@ -115,6 +115,20 @@ export default function ProjectDetail({ projectId }: { projectId: string }) {
         <p className="mt-4 text-sm leading-relaxed text-muted">{project.summary}</p>
       </motion.div>
 
+      {/* Historical context */}
+      {project.historicalContext && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="mt-16 max-w-3xl border-t border-line pt-10"
+        >
+          <h2 className="font-display text-xl font-bold text-ink">Historical context</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted">{project.historicalContext}</p>
+        </motion.div>
+      )}
+
       {/* Technologies */}
       <motion.div
         variants={fadeUp}
@@ -135,6 +149,63 @@ export default function ProjectDetail({ projectId }: { projectId: string }) {
           ))}
         </div>
       </motion.div>
+
+      {/* Features */}
+      {project.features && project.features.length > 0 && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="mt-16 border-t border-line pt-10"
+        >
+          <h2 className="font-display text-xl font-bold text-ink">Features</h2>
+          <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+            {project.features.map((feature) => (
+              <li key={feature} className="text-sm leading-relaxed text-muted">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
+
+      {/* Architecture */}
+      {project.architecture && project.architecture.length > 0 && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="mt-16 max-w-md border-t border-line pt-10"
+        >
+          <h2 className="font-display text-xl font-bold text-ink">Architecture</h2>
+          <div className="mt-6 flex flex-col gap-2 font-display text-sm text-ink">
+            {project.architecture.map((step, index) => (
+              <div key={step} className="flex flex-col items-start">
+                {index > 0 && <span className="pl-4 text-muted">↓</span>}
+                <span className="rounded-card border border-line bg-surface-light px-4 py-2">
+                  {step}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
+
+      {/* My role */}
+      {project.role && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={revealViewport}
+          className="mt-16 max-w-3xl border-t border-line pt-10"
+        >
+          <h2 className="font-display text-xl font-bold text-ink">My role</h2>
+          <p className="mt-4 text-sm leading-relaxed text-muted">{project.role}</p>
+        </motion.div>
+      )}
 
       {/* Project preview */}
       {project.previewUrl && (
