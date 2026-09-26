@@ -1,24 +1,12 @@
 /*
  * Restoration layer added while adapting Holy Churro for the portfolio.
- * The original data source for these sections (Firebase Storage combo
- * photos, and several third-party hotlinked product/Instagram images)
- * has gone dead since the site was built in 2019. This script swaps
- * those broken/fragile remote images for local copies once React has
- * rendered them, and replaces the "Nuestra Historia" slide with an
- * editorial layout, all without touching the app's own source or its
- * live Firestore data.
+ * The Instagram grid hotlinks third-party images that have gone dead
+ * since the site was built in 2019. This script swaps them for local
+ * copies once React has rendered them, and replaces the "Nuestra
+ * Historia" slide with an editorial layout. The product sections no
+ * longer need patching here: their data now comes from js/churro-data.js.
  */
 (function () {
-  var PRODUCT_IMAGE_MAP = [
-    { match: "combo_01", src: "img/products/combo-12-churros.jpg" },
-    { match: "combo_03", src: "img/products/combo-6-churros.jpg" },
-    { match: "combo_02", src: "img/products/combo-3-churro.jpg" },
-    { match: "png-school-bag", src: "img/products/morral-feo.png" },
-    { match: "Sweater-PNG-Image", src: "img/products/sweater.png" },
-    { match: "shirt-png-hd-ad-hd", src: "img/products/tshirt.png" },
-    { match: "taza-con-foto-magia", src: "img/products/taza-dona.png" },
-  ];
-
   var INSTAGRAM_IMAGES = [
     "img/instagram/post-1.jpg",
     "img/instagram/post-2.jpg",
@@ -37,21 +25,6 @@
     "<p>Fundamos Holy Churro en 2019 tratando de traer nuevos sabores y espectaculares creaciones a esta región donde poco se ofrecía. Fue un proceso largo, pero logramos crear un negocio de calidad para todos y todas las personas que nos visiten.</p>" +
     "</div>" +
     "</div>";
-
-  function localizeProductImages() {
-    var imgs = document.querySelectorAll('img[src^="http"]');
-    for (var i = 0; i < imgs.length; i++) {
-      var img = imgs[i];
-      if (img.dataset.restored === "1") continue;
-      for (var j = 0; j < PRODUCT_IMAGE_MAP.length; j++) {
-        if (img.src.indexOf(PRODUCT_IMAGE_MAP[j].match) !== -1) {
-          img.src = PRODUCT_IMAGE_MAP[j].src;
-          img.dataset.restored = "1";
-          break;
-        }
-      }
-    }
-  }
 
   function localizeInstagram() {
     var links = document.querySelectorAll(
@@ -80,7 +53,6 @@
   }
 
   function applyFixes() {
-    localizeProductImages();
     localizeInstagram();
     restoreHistoria();
   }
@@ -92,10 +64,6 @@
       var observer = new MutationObserver(applyFixes);
       observer.observe(root, { childList: true, subtree: true });
     }
-    // Safety net for the Firestore-backed sections, which render after
-    // an async query resolves and may land after the observer attaches.
-    setTimeout(applyFixes, 1500);
-    setTimeout(applyFixes, 4000);
   }
 
   if (document.readyState === "loading") {

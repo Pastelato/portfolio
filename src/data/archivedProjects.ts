@@ -67,11 +67,11 @@ export const archivedProjects: ArchivedProject[] = [
     gradient: ["--color-duo-2", "--color-duo-3"],
     thumbnailImage: "/projects/churro/logo.png",
     summary:
-      "Holy Churro was a one-page marketing site for a churro and cookie shop in Vicente López, Buenos Aires, founded in 2019. Built with Create React App, it composes a classic Bootstrap 4/jQuery landing template (image slider, \"Nuestra Historia\" story section, store photo and map link, an Instagram call-to-action, and a floating menu of delivery-app icons) inside React components, while two sections — a \"Destacados\" dish list and a \"Productos Más Vendidos\" carousel — pull their items live from a Firebase Firestore database instead of static markup, and that database is still active today.",
+      "Holy Churro was a one-page marketing site for a churro and cookie shop in Vicente López, Buenos Aires, founded in 2019. Built with Create React App, it composes a classic Bootstrap 4/jQuery landing template (image slider, \"Nuestra Historia\" story section, store photo and map link, an Instagram call-to-action, and a floating menu of delivery-app icons) inside React components, while two sections — a \"Destacados\" dish list and a \"Productos Más Vendidos\" carousel — pulled their items live from a Firebase Firestore database instead of static markup. The preview below is fully self-contained: Firebase has been removed from it, and those two sections now render the locally preserved product images without the original names and prices, which weren't kept.",
     techStack: [
       { name: "React 16 + Create React App", description: "Component structure and the production build served in the preview." },
-      { name: "Redux + react-redux-firebase", description: "Wires the two product sections to Firebase Firestore collections." },
-      { name: "Firebase Firestore", description: "Live backing store for the \"Destacados\" and \"Productos Más Vendidos\" items, still queried in real time by the preview below." },
+      { name: "Redux + react-redux-firebase", description: "Wired the two product sections to Firebase Firestore collections in the original site." },
+      { name: "Firebase Firestore", description: "Original backing store for the \"Destacados\" and \"Productos Más Vendidos\" items; the preview below no longer connects to it." },
       { name: "Bootstrap 4 + jQuery plugins", description: "Owl Carousel, WOW.js, Magnific Popup and Superfish power the template's layout and animations." },
       { name: "React Router", description: "Included in the app shell, though the site itself is a single page." },
     ],
