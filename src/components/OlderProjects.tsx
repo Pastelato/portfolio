@@ -228,6 +228,7 @@ export default function OlderProjects() {
       </motion.div>
 
       <motion.div
+        key={filteredProjects.map((project) => project.id).join("|")}
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
